@@ -26,8 +26,7 @@ for isub = subs
     EEG_left = pop_roi_connect(EEG_left, 'methods', {'MIM'});
     EEG_right = pop_roi_connect(EEG_right, 'methods', {'MIM'});
     
-    %this step can be omitted with the latest version of the plugin, todo:
-    %remove when Tien's pull request is accepted
+    %this step can be omitted with the latest version of the 
     EEG_left = vec2mat(EEG_left); 
     EEG_left.roi.MIM = EEG_left.roi.MIM_matrix;  
     EEG_right = vec2mat(EEG_right); 
