@@ -3,6 +3,7 @@ eeglab
 
 addpath('~/Dropbox/Franziska/Meditation/matlab/eeglab-develop/plugins/dipfit/standard_BEM/elec/');
 addpath('~/Dropbox/Franziska/Meditation/matlab/eeglab-develop/plugins/roiconnect/libs/brainstorm/');
+addpath('~/Dropbox/Franziska/Meditation/matlab/eeglab-develop/plugins/roiconnect/libs/export_fig/');
 
 DIRIN = '/Users/franziskapellegrini/Dropbox/VitalBCI/mat/imag/';
 

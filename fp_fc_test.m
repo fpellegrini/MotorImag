@@ -61,7 +61,7 @@ ml = sum(MIML,3);
 mr = sum(MIMR,3);
 
 %do statistics 
-for iroi=1:EEG_left.roi.nroi
+for iroi=1:EEG_left.roi.nROI
     [h(iroi), p(iroi), ~, stats] = ttest(ml(:,iroi),mr(:,iroi),'alpha',0.05);
     t(iroi) = sign(stats.tstat);
 end
@@ -70,4 +70,4 @@ end
 load cm17;
 load(['~/Dropbox/Franziska/Musikerdystonie_Projekt/Daten/processed_bs_wzb/Subject01/bs_results.mat']);
 p=-log10(p).* squeeze(t);
-allplots_cortex_BS(cortex_highres,p, [-max(abs(p)) max(abs(p))], cm17 ,'.', 0.3,[DIRFIG 'MIM'])
+allplots_cortex_BS(cortex_highres,p, [-max(abs(p)) max(abs(p))], cm17 ,'-log(p)*sign(t)', 0.3,[DIRFIG 'MIM'])

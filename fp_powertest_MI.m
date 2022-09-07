@@ -82,6 +82,6 @@ end
 load cm17;
 load(['~/Dropbox/Franziska/Musikerdystonie_Projekt/Daten/processed_bs_wzb/Subject01/bs_results.mat']);
 p=-log10(p).* squeeze(t);
-allplots_cortex_BS(cortex_highres,p, [-max(abs(p)) max(abs(p))], cm17 ,'-log(p)', 0.3,[DIRFIG 'power_stats'])
+allplots_cortex_BS(cortex_highres,p, [-max(abs(p)) max(abs(p))], cm17 ,'-log(p)*sign(t)', 0.3,[DIRFIG 'power_stats'])
 
 
