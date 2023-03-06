@@ -1,4 +1,5 @@
 function chans = fp_matchdbs_motorImag(DB_noisechans,subID)
+% Copyright (c) 2022 Franziska Pellegrini and Stefan Haufe
 
 for iEntry = 1:numel(DB_noisechans) 
     names{iEntry} = DB_noisechans{iEntry}{1};

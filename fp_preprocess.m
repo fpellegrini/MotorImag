@@ -113,7 +113,7 @@ for isub = 2:nsub %subject 1 not available
         
         %% plot on channel level 
         
-        pop_spectopo(EEG, 1, [],'EEG' , 'percent', 100, 'freq', 10, 'freqrange',[0 50],'electrodes','on');
+        pop_spectopo(EEG, 1, [],'EEG' , 'percent', 100, 'freq', 10, 'freqrange',[0 100],'electrodes','on');
         outname = [DIRFIG sub '.png'];
         print(outname,'-dpng');
         close all

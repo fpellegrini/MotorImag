@@ -1,4 +1,5 @@
-function fp_fc_test
+function fp_fc_ttest
+% Copyright (c) 2022 Franziska Pellegrini and Stefan Haufe
 
 DIRIN = '~/Dropbox/Franziska/MotorImag/Data_MI/';
 
@@ -61,8 +62,8 @@ for iroi=1:EEG_left.roi.nROI
     t(iroi) = sign(stats.tstat);
 end
 
-
+%% Plot 
 load cm17;
-load(['~/Dropbox/Franziska/Musikerdystonie_Projekt/Daten/processed_bs_wzb/Subject01/bs_results.mat']);
+load('bs_results.mat');
 p=-log10(p).* squeeze(t);
 allplots_cortex_BS(cortex_highres,p, [-max(abs(p)) max(abs(p))], cm17 ,'-log(p)*sign(t)', 0.3,[DIRFIG 'MIM'])
