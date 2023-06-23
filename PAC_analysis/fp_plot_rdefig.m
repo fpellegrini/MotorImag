@@ -1,4 +1,5 @@
 function fp_plot_rdefig(data,ca,mask)
+% Copyright (c) 2023 Franziska Pellegrini and Stefan Haufe
 
 regions = {'Postcentral left','Postcentral right','Precentral left','Precentral right'};
 fig = figure;

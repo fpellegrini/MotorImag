@@ -1,5 +1,5 @@
-
 function fp_pac_shuffletest(isb)
+% Copyright (c) 2023 Franziska Pellegrini and Stefan Haufe
 
 DIRIN = './data/';
 DIROUT = './bispecs/';

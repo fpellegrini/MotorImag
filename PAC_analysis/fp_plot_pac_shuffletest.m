@@ -1,5 +1,6 @@
 function fp_plot_pac_shuffletest
 % Plot results of shuffletest 
+% Copyright (c) 2023 Franziska Pellegrini and Stefan Haufe
 
 DIRIN = '~/Dropbox/Franziska/MotorImag/Data_MI/PAC/bispectra/';
 

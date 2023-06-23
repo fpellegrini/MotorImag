@@ -1,6 +1,7 @@
 function fp_prepare_nsg_submission_pac
 %Function that preprocesses the data so that it can be uploaded and
 %processed on nsg cluster 
+% Copyright (c) 2023 Franziska Pellegrini and Stefan Haufe
 
 DIRIN = '~/Dropbox/Franziska/MotorImag/Data_MI/';
 

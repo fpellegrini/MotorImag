@@ -1,5 +1,6 @@
 function fp_submit_pac_shuffletest_nsg
-%Enable parallel processing of 26 subjects on sng cluster 
+%Enable parallel processing of 26 subjects on nsg cluster 
+% Copyright (c) 2023 Franziska Pellegrini and Stefan Haufe
 
 isbs = 1:26;
 

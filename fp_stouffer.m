@@ -2,6 +2,7 @@ function [p_stouff, zr] = fp_stouffer(p,nshuf,tail)
 %first dimension of p is the one that will be aggreagated
 %tail must be 'left', 'right', or 'both', depending on a two-or one sided
 %test is required
+% Copyright (c) 2023 Franziska Pellegrini and Stefan Haufe
 
 nsub = size(p,1);
 p(p==1)=0.9999;
