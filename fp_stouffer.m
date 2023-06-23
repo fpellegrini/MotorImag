@@ -1,17 +1,21 @@
-function p_stouff = fp_stouffer(p)
-%Stouffer's method to aggregate p-values 
-% Copyright (c) 2022 Franziska Pellegrini and Stefan Haufe
+function [p_stouff, zr] = fp_stouffer(p,nshuf,tail)
+%first dimension of p is the one that will be aggreagated
+%tail must be 'left', 'right', or 'both', depending on a two-or one sided
+%test is required
 
-nsub = numel(p);
+nsub = size(p,1);
 p(p==1)=0.9999;
-p(p==0)=0.001; 
+p(p==0)= 1/nshuf; 
 zsr= norminv(p);
-zr = squeeze(sum(zsr,2)./sqrt(nsub));
+zr = squeeze(sum(zsr,1)./sqrt(nsub));
 
 %ensure that disproportionally high p-values don't lead to low p-values
 %after stouffer
-if (zr>0)
-    p_stouff = 1;
-else
-    p_stouff = normpdf(zr);
+p_stouff = normpdf(zr);
+
+if strcmp(tail,'left')
+    p_stouff(zr<=0) = 1;
+elseif strcmp(tail,'right')
+    p_stouff(zr>=0) = 1;
 end
+
