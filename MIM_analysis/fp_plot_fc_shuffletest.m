@@ -11,16 +11,16 @@ nsub = 26;
 %% generate p-values by comparing true MIM to null distribution 
 for isb = 1:nsub    
     in = load([DIRIN 'RDE_shuf_' num2str(isb) '.mat']);
-    
+    nshuf = size(in.MIM_s,3)-1;
     %average over one region dimension to obtain netMIM 
     MIM_s = squeeze(mean(in.MIM_s,2)); 
-    MIM_pn(:,isb) = sum(MIM_s(:,1)< MIM_s(:,2:end),2)./(size(in.MIM_s,3)-1);   
+    MIM_pn(:,isb) = (sum(MIM_s(:,1)< MIM_s(:,2:end),2))./nshuf;   
 end
 
 %% Use Stouffer's method to aggregate p-values 
 nroi = size(MIM_pn,1);
 for iroi = 1:nroi
-    MIM_pn_s(iroi) = fp_stouffer(squeeze(MIM_pn(iroi,:)));
+    MIM_pn_s(iroi) = fp_stouffer(squeeze(MIM_pn(iroi,:)),nshuf,'right');
 end
 
 %% Use FDR-correction for multiple comparison's correction 
