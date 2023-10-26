@@ -2,7 +2,7 @@ function fp_plot_pac_shuffletest
 % Plot results of shuffletest 
 % Copyright (c) 2023 Franziska Pellegrini and Stefan Haufe
 
-DIRIN = '~/Dropbox/Franziska/MotorImag/Data_MI/PAC/bispectra/';
+DIRIN = '~/Dropbox/Franziska/MotorImag/Data_MI/PAC_RDE_shuffletest/';
 
 DIRFIG = '~/Desktop/';
 if ~exist(DIRFIG); mkdir(DIRFIG); end
@@ -58,18 +58,18 @@ for mode = 1:2 %mode 1: uncorrected bispectrum, mode 2: anti-symmetrized bispect
     mask = ones(size(pl));
 
     %plot masked z-values 
-    mask(pl>0.05) = 0.1;
-    fp_plot_rdefig3(-zr,[-3 3 ],mask)
+    mask(pl>0.05) = 0.3;
+    fp_plot_rdefig(-zr,[0 3 ],mask)
     
     if mode == 1
-        outname = [DIRFIG 'left_orig.png'];
+        outname = [DIRFIG 'right_orig.png'];
         print(outname,'-dpng');
-        outname = [DIRFIG 'left_orig.eps'];
+        outname = [DIRFIG 'right_orig.eps'];
         print(outname,'-depsc');
     elseif mode == 2
-        outname = [DIRFIG 'left_anti.png'];
+        outname = [DIRFIG 'right_anti.png'];
         print(outname,'-dpng');
-        outname = [DIRFIG 'left_anti.eps'];
+        outname = [DIRFIG 'right_anti.eps'];
         print(outname,'-depsc');
     end
     close all
@@ -78,14 +78,14 @@ end
 %%
 
 figure; 
-cl=slanCM('imola');
+cl=slanCM('Blues');
 colormap(cl)
-caxis([ -3 3]) 
+caxis([ 0 3]) 
 cb = colorbar;
 cb.Label.String = 'Stouffer''s z';
 cb.FontSize = 18;
-outname = [DIRFIG 'cb_left_prepost.png'];
+outname = [DIRFIG 'cb_right_prepost.png'];
 print(outname,'-dpng');
-outname = [DIRFIG 'cb_left_prepost.eps'];
+outname = [DIRFIG 'cb_right_prepost.eps'];
 print(outname,'-depsc');
 

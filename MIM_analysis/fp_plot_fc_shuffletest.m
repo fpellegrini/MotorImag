@@ -3,7 +3,7 @@ function fp_plot_fc_shuffletest
 %them 
 % Copyright (c) 2022 Franziska Pellegrini and Stefan Haufe
 
-DIRIN = '~/Dropbox/Franziska/Data_MEG_Project/RDE_shuffletest/right_MI/';
+DIRIN = './Data_MI/RDE_shuffletest/right_MI/';
 DIRFIG = '~/Desktop/';
 
 nsub = 26;
